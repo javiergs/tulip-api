@@ -2,7 +2,7 @@
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Version 8.1.0](https://img.shields.io/badge/version-8.1.0-green)
-[![Java CI](https://github.com/jgs-lab/api-rtde4j/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-rtde4j/actions/workflows/build.yml)
+[![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
 **TULIP** is a Java utility library distributed through Maven Central. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
