@@ -4,7 +4,7 @@
 ![Version 8.1.0](https://img.shields.io/badge/version-8.1.0-green)
 [![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
-**TULIP** is a Java utility library distributed through Maven Central. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
+**TULIP** is a Java utility library distributed through Maven Central. The current library release is **8.1.0**; the examples below still target **8.0.0** until they are updated and verified. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
 ## Install
 
@@ -48,7 +48,7 @@ mvn exec:java -Dexec.mainClass=example.Main
 
 - **GitHub:** URL parsing, remote file retrieval, and repository traversal. [Guide](docs/github-client.md).
 - **Taiga:** Projects, sprints, user stories, tasks, and status operations. [Guide](docs/taiga-client.md).
-- **RTDE:** Universal Robots communication utilities; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/rtde/package-summary.html). Hardware-dependent examples are not included.
+- **RTDE migration:** Universal Robots RTDE support has moved out of TULIP into the independent [RTDE4J library](https://github.com/jgs-lab/api-rtde4j). See the [RTDE4J getting-started guide](https://github.com/javiergs/rtde4j-getting-started) for installation and JavaDoc.
 - **Compiler:** Lexer, token, and automata helpers; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/compiler/package-summary.html).
 - **Groq:** API client utilities; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/groq/package-summary.html).
 
