@@ -6,9 +6,16 @@
 
 **TULIP** is a Java utility library distributed through Maven Central. The current library release is **8.1.0**; the examples below still target **8.0.0** until they are updated and verified. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
-## Install
+## Requirements
 
-Requires **Java 21+** and Maven. Add the following dependency to your project's `pom.xml`:
+- Java 21+ and Maven
+- Example-specific configuration as described below
+
+> [!NOTE]
+> **Development status:** The library release is 8.1.0, while these examples still use 8.0.0. Example compilation against 8.1.0 has not yet been verified.
+
+## Install
+ Add the following dependency to your project's `pom.xml`:
 
 ```xml
 <dependency>
