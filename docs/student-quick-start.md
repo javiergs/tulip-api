@@ -1,4 +1,4 @@
-# Student Quick Start — TULIP 8.1.0
+# Student Quick Start — TULIP 8.0.0
 
 **Goal:** Learn to use the published TULIP Java library with external APIs, beginning with a public GitHub repository and progressing to authenticated, read-only Taiga access.
 
@@ -23,7 +23,7 @@ cd tulip-getting-started/examples/github-api
 mvn clean verify
 ```
 
-Maven downloads `com.javiergs:tulip:8.1.0` automatically from Maven Central. You do not need the TULIP implementation source.
+Maven downloads `com.javiergs:tulip:8.0.0` automatically from Maven Central. You do not need the TULIP implementation source.
 
 ## 3. First experiment: GitHub (no token required for public repositories)
 
