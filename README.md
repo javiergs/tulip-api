@@ -6,6 +6,8 @@
 
 **TULIP** is a Java utility library distributed through Maven Central. The examples use **TULIP 8.1.0** from Maven Central. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
+**New to TULIP?** Start with the [Student Quick Start](docs/student-quick-start.md): clone, run the GitHub example, explore read-only Taiga access, and develop an independent experiment.
+
 ## Requirements
 
 - Java 21+ and Maven
@@ -67,3 +69,7 @@ mvn exec:java -Dexec.mainClass=example.Main
 - [GitHub client](docs/github-client.md)
 - [Taiga client](docs/taiga-client.md)
 - [JavaDoc](https://javiergs.github.io/tulip-api/javadoc/)
+
+## Contributing
+
+Improvements to examples, tutorials, and documentation are welcome via pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for the fork-and-PR process, testing expectations, credential handling, and maintainer review.
