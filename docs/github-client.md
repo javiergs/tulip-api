@@ -127,7 +127,7 @@ Add:
 GITHUB_TOKEN=ghp_your_token_here
 ```
 
-The token is loaded locally by the application using the library.
+The GitHub example loads the token from the `GITHUB_TOKEN` environment variable first, then from the local properties file.
 
 > [!NOTE]
 > Do not commit `tulip.properties` if it contains a real GitHub token.

@@ -1,14 +1,14 @@
-package example;
+package com.javiergs.examples.taiga;
 
 import javiergs.tulip.taiga.TaigaClient;
 import javiergs.tulip.taiga.TaigaProject;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Main {
+public class TaigaReadExample {
     public static void main(String[] args) throws Exception {
         Properties properties = new Properties();
-        try (InputStream in = Main.class.getClassLoader().getResourceAsStream("tulip.properties")) {
+        try (InputStream in = TaigaReadExample.class.getClassLoader().getResourceAsStream("tulip.properties")) {
             if (in == null) throw new IllegalStateException("Create src/main/resources/tulip.properties from tulip.properties.example");
             properties.load(in);
         }

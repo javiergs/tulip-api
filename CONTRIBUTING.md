@@ -19,7 +19,7 @@ If an example reveals a missing library capability, describe the desired API and
 2. Create a descriptive branch (for example, `docs/github-token-setup` or `examples/taiga-readonly`).
 3. Make a focused change in one example or documentation section.
 4. Keep Maven Central dependency versions unchanged unless a maintainer requests an update.
-5. From the affected example directory, run `mvn clean verify`. Record any additional manual checks and required credentials.
+5. From the repository root, run `mvn clean verify`. Record any additional manual checks and required credentials.
 6. Push your branch and open a pull request against this repository's `main` branch.
 
 ## Pull request checklist
