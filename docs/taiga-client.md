@@ -1,3 +1,28 @@
+# Taiga client guide
+
+> [!IMPORTANT]
+> Start with the **read-only** example in `examples/taiga-readonly`. The `examples/taiga-api` example **creates, moves, and deletes** Taiga work items. Run it only against a dedicated, disposable test project; cleanup is best-effort and may leave resources behind.
+
+## Run the read-only example
+
+From `examples/taiga-readonly`, copy `src/main/resources/tulip.properties.example` to `src/main/resources/tulip.properties`, fill in your test credentials, then run:
+
+```bash
+mvn clean verify
+mvn exec:java -Dexec.mainClass=example.Main
+```
+
+## Run the write example (test project only)
+
+In `examples/taiga-api`, configure the same local `tulip.properties`. Find the numeric ID of a **disposable** Taiga project you own. The write example refuses to run unless both the explicit opt-in and project ID are provided:
+
+```bash
+mvn clean verify
+MAVEN_OPTS="-Dtaiga.allowWrites=true -Dtaiga.testProjectId=12345" mvn exec:java -Dexec.mainClass=example.Main
+```
+
+Replace `12345` with your **test** project ID. The program verifies that the selected project is accessible, creates a temporary sprint/story/task, attempts a status change, and then attempts cleanup. Check the test project afterward; remote failures can leave artifacts. Never run against a production or shared course project.
+
 The `TaigaClient` module provides a lightweight Java wrapper around the Taiga REST API.
 
 It supports:
