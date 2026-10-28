@@ -1,18 +1,15 @@
 # Getting Started with TULIP
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
-![Version 8.1.0](https://img.shields.io/badge/version-8.1.0-green)
+![Examples 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
 [![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
-**TULIP** is a Java utility library distributed through Maven Central. The current library release is **8.1.0**; the examples below still target **8.0.0** until they are updated and verified. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
+**TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
 ## Requirements
 
 - Java 21+ and Maven
 - Example-specific configuration as described below
-
-> [!NOTE]
-> **Development status:** The library release is 8.1.0, while these examples still use 8.0.0. Example compilation against 8.1.0 has not yet been verified.
 
 ## Install
  Add the following dependency to your project's `pom.xml`:
@@ -28,7 +25,7 @@
 - [Maven Central artifact page](https://central.sonatype.com/artifact/com.javiergs/tulip/8.0.0)
 - [API reference (JavaDoc)](https://javiergs.github.io/tulip-api/javadoc/)
 
-> The examples target version **8.0.0**. Their compilation against Maven Central has not yet been independently verified in this repository.
+> GitHub Actions compiles each example against the published Maven Central dependency. Service authentication and live API behavior are not tested in CI.
 
 ## Examples
 
