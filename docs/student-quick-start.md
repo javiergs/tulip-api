@@ -19,7 +19,7 @@ mvn -version
 
 ```bash
 git clone https://github.com/javiergs/tulip-getting-started.git
-cd tulip-getting-started/examples/github-api
+cd tulip-getting-started
 mvn clean verify
 ```
 
@@ -27,22 +27,21 @@ Maven downloads `com.javiergs:tulip:8.0.0` automatically from Maven Central. You
 
 ## 3. First experiment: GitHub (no token required for public repositories)
 
-From `examples/github-api`:
+From the repository root:
 
 ```bash
-mvn exec:java -Dexec.mainClass=example.Main
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.github.GitHubExample
 ```
 
-The example traverses files in a public GitHub repository. If GitHub rate-limits your requests, copy `src/main/resources/tulip.properties.example` to `tulip.properties` in the same directory and configure an optional `GITHUB_TOKEN`. **Never commit the populated file.**
+The example traverses files in a public GitHub repository. If GitHub rate-limits your requests, copy `src/main/resources/tulip.properties.example` to `src/main/resources/tulip.properties` and configure an optional `GITHUB_TOKEN`. **Never commit the populated file.**
 
-Inspect `src/main/java/example/Main.java` and the [GitHub client guide](github-client.md). Identify the target repository, returned file paths, and behavior when a repository or token is invalid.
+Inspect `src/main/java/com/javiergs/examples/github/GitHubExample.java` and the [GitHub client guide](github-client.md). Identify the target repository, returned file paths, and behavior when a repository or token is invalid.
 
 ## 4. Second experiment: Taiga read-only
 
 From the repository root:
 
 ```bash
-cd examples/taiga-readonly
 cp src/main/resources/tulip.properties.example src/main/resources/tulip.properties
 ```
 
@@ -50,16 +49,16 @@ Enter your test account's `taiga.host`, `taiga.username`, and `taiga.password`, 
 
 ```bash
 mvn clean verify
-mvn exec:java -Dexec.mainClass=example.Main
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.taiga.TaigaReadExample
 ```
 
 Record which projects you can access, how authentication failures are reported, and how the data differs from GitHub's file listing. See the [Taiga guide](taiga-client.md).
 
 ## 5. Optional: Taiga write operations (disposable project only)
 
-Only after completing the read-only example, inspect `examples/taiga-api/src/main/java/example/Main.java` and its configuration. This example creates a sprint, user story, and task, moves the task, and attempts cleanup. **It changes remote data** and cleanup can fail.
+Only after completing the read-only example, inspect `src/main/java/com/javiergs/examples/taiga/TaigaWriteExample.java` and its configuration. This example creates a sprint, user story, and task, moves the task, and attempts cleanup. **It changes remote data** and cleanup can fail.
 
-Use a dedicated test project and follow the example's explicit opt-in instructions. Do not use a production or shared course project.
+Set `taiga.test.project.id` to a dedicated disposable test project ID and run `mvn exec:java -Dexec.mainClass=com.javiergs.examples.taiga.TaigaWriteExample -Dexec.args=--allow-write`. Do not use a production or shared course project.
 
 ## 6. Develop an independent experiment
 

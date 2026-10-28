@@ -32,6 +32,8 @@ Add:
 taiga.host=https://api.taiga.io
 taiga.username=your_username
 taiga.password=your_password
+# For the write example only: ID of a disposable test project
+taiga.test.project.id=
 ```
 
 ## Basic Authentication Example

@@ -3,3 +3,4 @@
 *.iml
 **/target/
 **/tulip.properties
+/src/main/resources/application.properties

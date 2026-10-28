@@ -4,7 +4,7 @@
 ![Examples 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
 [![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
-**TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
+**TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through a single Maven project containing independent runnable examples, guides, and API documentation. The library implementation is not maintained here.
 
 <img width="1536" height="1024" alt="F2A1C771-964E-4889-B15D-57423EA5EB00" src="https://github.com/user-attachments/assets/01117cfe-735b-44e0-9ed4-2bb47c6126ab" />
 
@@ -30,28 +30,36 @@
 - [Maven Central artifact page](https://central.sonatype.com/artifact/com.javiergs/tulip/8.0.0)
 - [API reference (JavaDoc)](https://javiergs.github.io/tulip-api/javadoc/)
 
-> GitHub Actions compiles each example against the published Maven Central dependency. Service authentication and live API behavior are not tested in CI.
+> GitHub Actions compiles the single Maven project against the published Maven Central dependency. Service authentication and live API behavior are not tested in CI.
 
 ## Examples
 
-Each folder is an independent Maven project with its own `pom.xml`.
+The repository is **one Maven project**. Each example has its own `main()` method under `src/main/java/com/javiergs/examples/`.
 
-- **[GitHub API](examples/github-api/)** — List files in a public GitHub repository. Supports an optional access token for rate limits and private repositories. [Guide](docs/github-client.md).
-- **[Taiga API](examples/taiga-api/)** — Authenticate and demonstrate creating, reading, moving, and cleaning up Taiga work items. **This example writes to a Taiga project**; use a disposable test project. [Guide](docs/taiga-client.md).
-- **[Taiga read-only](examples/taiga-readonly/)** — Authenticate and list accessible projects without changing any Taiga data.
+- **GitHub API** — List files in a public GitHub repository. Supports an optional access token for rate limits and private repositories. [Guide](docs/github-client.md).
+- **Taiga API** — Authenticate and demonstrate creating, reading, moving, and cleaning up Taiga work items. **This example writes to a Taiga project**; use a disposable test project. [Guide](docs/taiga-client.md).
+- **Taiga read-only** — Authenticate and list accessible projects without changing any Taiga data.
 
-To compile an example:
-
-```sh
-cd examples/github-api
-mvn compile
-```
-
-To run its `example.Main` class:
+From the repository root, compile all examples:
 
 ```sh
-mvn exec:java -Dexec.mainClass=example.Main
+mvn clean verify
 ```
+
+Run one example explicitly:
+
+```sh
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.github.GitHubExample
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.taiga.TaigaReadExample
+```
+
+To run the **destructive Taiga write** example, configure a disposable `taiga.test.project.id` and explicitly opt in:
+
+```sh
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.taiga.TaigaWriteExample -Dexec.args=--allow-write
+```
+
+No external API calls occur during `mvn verify`.
 
 ## Modules
 
@@ -63,9 +71,9 @@ mvn exec:java -Dexec.mainClass=example.Main
 
 ## Configuration and credentials
 
-- Use a local `tulip.properties` file for example-specific credentials, following the included `tulip.properties.example` files.
+- Use a local `tulip.properties` file for example-specific credentials, following `src/main/resources/tulip.properties.example`.
 - **Do not commit actual credentials.** The `.gitignore` excludes local `tulip.properties` files.
-- GitHub examples can use an optional `GITHUB_TOKEN`; Taiga examples require `taiga.host`, `taiga.username`, and `taiga.password`.
+- GitHub examples can use an optional `GITHUB_TOKEN` environment variable (preferred) or properties key; Taiga examples require `taiga.host`, `taiga.username`, and `taiga.password`.
 
 ## Documentation
 

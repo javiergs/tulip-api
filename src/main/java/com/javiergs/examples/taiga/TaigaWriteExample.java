@@ -1,4 +1,4 @@
-package example;
+package com.javiergs.examples.taiga;
 
 import javiergs.tulip.taiga.*;
 
@@ -6,9 +6,13 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-public class Main {
+public class TaigaWriteExample {
 
     public static void main(String[] args) throws Exception {
+
+        if (args.length != 1 || !"--allow-write".equals(args[0])) {
+            throw new IllegalArgumentException("This example modifies Taiga data. Run with --allow-write in a disposable test project.");
+        }
 
         Properties cfg = loadProperties("tulip.properties");
 
@@ -28,7 +32,11 @@ public class Main {
             return;
         }
 
-        TaigaProject project = projects.get(0);
+        long projectId = Long.parseLong(require(cfg, "taiga.test.project.id"));
+        TaigaProject project = projects.stream()
+                .filter(p -> p.getId() == projectId)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Configured Taiga test project is not accessible: " + projectId));
 
         System.out.println("Using project: " + project.getName());
 
@@ -120,7 +128,7 @@ public class Main {
         Properties p = new Properties();
 
         try (InputStream in =
-                     Main.class.getClassLoader()
+                     TaigaWriteExample.class.getClassLoader()
                              .getResourceAsStream(resourceName)) {
 
             if (in == null) {

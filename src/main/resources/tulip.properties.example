@@ -1,0 +1,10 @@
+# Copy this file to tulip.properties in this directory (ignored by Git).
+# Never commit real credentials. Environment variable GITHUB_TOKEN takes precedence.
+GITHUB_TOKEN=
+taiga.host=https://api.taiga.io
+taiga.username=
+taiga.password=
+# Required only for TaigaWriteExample. Use a disposable test project ID.
+taiga.test.project.id=
+# Reserved for future Groq examples.
+groq.api.key=
