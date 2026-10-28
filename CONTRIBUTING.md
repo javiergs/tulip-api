@@ -2,7 +2,7 @@
 
 Thank you for improving the public tutorials, examples, and documentation for **TULIP**.
 
-This repository contains **student-facing examples** that use the published `com.javiergs:tulip:8.1.0` Maven dependency. The TULIP library implementation is maintained separately and is not part of this repository. You do not need access to its source code.
+This repository contains **student-facing examples** that use the published `com.javiergs:tulip:8.0.0` Maven dependency. The TULIP library implementation is maintained separately and is not part of this repository. You do not need access to its source code.
 
 ## Contributions welcome
 
