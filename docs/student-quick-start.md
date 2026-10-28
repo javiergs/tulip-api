@@ -59,7 +59,7 @@ Record which projects you can access, how authentication failures are reported, 
 
 Only after completing the read-only example, inspect `examples/taiga-api/src/main/java/example/Main.java` and its configuration. This example creates a sprint, user story, and task, moves the task, and attempts cleanup. **It changes remote data** and cleanup can fail.
 
-Use a dedicated test project and follow the example's explicit opt-in instructions. Do not use a production or shared course project.
+Use a dedicated test project and follow the [Taiga write example instructions](taiga-client.md#run-the-write-example-test-project-only) for the required explicit opt-in and numeric test project ID. Do not use a production or shared course project.
 
 ## 6. Develop an independent experiment
 
