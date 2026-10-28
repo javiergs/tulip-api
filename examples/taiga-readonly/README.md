@@ -6,4 +6,4 @@ This example logs in to Taiga and prints projects accessible to the authenticate
 2. Enter the Taiga host and credentials in the local file. Never commit it.
 3. Run `mvn compile exec:java -Dexec.mainClass=example.Main`.
 
-Requires Java 21+, Maven, and the published `com.javiergs:tulip:8.0.0` dependency.
+Requires Java 21+, Maven, and the published `com.javiergs:tulip:8.1.0` dependency.
