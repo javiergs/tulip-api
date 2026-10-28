@@ -4,15 +4,12 @@
 ![Version 8.1.0](https://img.shields.io/badge/version-8.1.0-green)
 [![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
-**TULIP** is a Java utility library distributed through Maven Central. The current library release is **8.1.0**; the examples below still target **8.0.0** until they are updated and verified. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
+**TULIP** is a Java utility library distributed through Maven Central. The examples use **TULIP 8.1.0** from Maven Central. This repository helps developers **use the published library** through independent Maven examples, guides, and API documentation. The library implementation is not maintained here.
 
 ## Requirements
 
 - Java 21+ and Maven
 - Example-specific configuration as described below
-
-> [!NOTE]
-> **Development status:** The library release is 8.1.0, while these examples still use 8.0.0. Example compilation against 8.1.0 has not yet been verified.
 
 ## Install
  Add the following dependency to your project's `pom.xml`:
@@ -21,14 +18,14 @@
 <dependency>
     <groupId>com.javiergs</groupId>
     <artifactId>tulip</artifactId>
-    <version>8.0.0</version>
+    <version>8.1.0</version>
 </dependency>
 ```
 
-- [Maven Central artifact page](https://central.sonatype.com/artifact/com.javiergs/tulip/8.0.0)
+- [Maven Central artifact page](https://central.sonatype.com/artifact/com.javiergs/tulip/8.1.0)
 - [API reference (JavaDoc)](https://javiergs.github.io/tulip-api/javadoc/)
 
-> The examples target version **8.0.0**. Their compilation against Maven Central has not yet been independently verified in this repository.
+> GitHub Actions compiles each example against the published Maven Central dependency. Service authentication and live API behavior are not tested in CI.
 
 ## Examples
 
