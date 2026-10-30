@@ -4,11 +4,10 @@
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Examples 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
-[![Java CI](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-tulip/actions/workflows/build.yml)
 
 **TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through a single Maven project containing independent runnable examples, guides, and API documentation. The library implementation is not maintained here.
 
-<img width="1536" height="1024" alt="F2A1C771-964E-4889-B15D-57423EA5EB00" src="https://github.com/user-attachments/assets/01117cfe-735b-44e0-9ed4-2bb47c6126ab" />
+<img width="1536" height="1024" alt="TULIP library overview illustration" src="https://github.com/user-attachments/assets/01117cfe-735b-44e0-9ed4-2bb47c6126ab" />
 
 
 **New to TULIP?** Start with the [Student Quick Start](docs/student-quick-start.md): clone, run the GitHub example, explore read-only Taiga access, and develop an independent experiment.
@@ -67,7 +66,7 @@ No external API calls occur during `mvn verify`.
 
 - **GitHub:** URL parsing, remote file retrieval, and repository traversal. [Guide](docs/github-client.md).
 - **Taiga:** Projects, sprints, user stories, tasks, and status operations. [Guide](docs/taiga-client.md).
-- **RTDE migration:** Universal Robots RTDE support has moved out of TULIP into the independent [RTDE4J library](https://github.com/jgs-lab/api-rtde4j). See the [RTDE4J getting-started guide](https://github.com/javiergs/rtde4j-getting-started) for installation and JavaDoc.
+- **RTDE migration:** Universal Robots RTDE support has moved out of TULIP into the independent RTDE4J library. See the [RTDE4J getting-started guide](https://github.com/javiergs/rtde4j-getting-started) for installation and JavaDoc.
 - **Compiler:** Lexer, token, and automata helpers; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/compiler/package-summary.html).
 - **Groq:** API client utilities; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/groq/package-summary.html).
 
