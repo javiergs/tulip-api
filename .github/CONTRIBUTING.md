@@ -11,7 +11,7 @@ This repository contains **student-facing examples** that use the published `com
 - Bug fixes, tests, documentation, and troubleshooting guides.
 - Improved explanations of authentication, API responses, error handling, and limitations.
 
-If an example reveals a missing library capability, describe the desired API and use case in an issue or pull request. Do not copy private library implementation into this repository.
+If an example reveals a missing library capability, describe the desired API and use case in an issue or pull request. Do not copy library implementation code into this examples repository.
 
 ## Fork, test, and submit a PR
 
