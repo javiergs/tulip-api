@@ -1,24 +1,34 @@
 # Getting Started with TULIP
 
-
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
-![Examples 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
+![Version 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
 [![Java CI](https://github.com/javiergs/tulip-getting-started/actions/workflows/java-ci.yml/badge.svg)](https://github.com/javiergs/tulip-getting-started/actions/workflows/java-ci.yml)
 
-**TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through a single Maven project containing independent runnable examples, guides, and API documentation. The library implementation is not maintained here.
+**TULIP** is a Java utility library for working with GitHub, Taiga, and other developer tools. Use this repository to learn the published **TULIP 8.0.0** API through small, independent Java 21 and Maven examples.
 
 <img width="1536" height="1024" alt="TULIP library overview illustration" src="https://github.com/user-attachments/assets/01117cfe-735b-44e0-9ed4-2bb47c6126ab" />
 
-
-**New to TULIP?** Start with the [Student Quick Start](docs/student-quick-start.md): clone, run the GitHub example, explore read-only Taiga access, and develop an independent experiment.
+**New to TULIP?** Start with the [Student Quick Start](docs/student-quick-start.md) for guided examples and independent development.
 
 ## Requirements
 
 - Java 21+ and Maven
 - Example-specific configuration as described below
 
-## Install
- Add the following dependency to your project's `pom.xml`:
+## Quick start
+
+Start with the public GitHub example (no token required for basic public access):
+
+```bash
+mvn clean verify
+mvn exec:java -Dexec.mainClass=com.javiergs.examples.github.GitHubExample
+```
+
+For read-only Taiga access, configure the credentials described in the [Taiga guide](docs/taiga-client.md) before running `TaigaReadExample`. Avoid running write examples against real projects.
+
+## Install with Maven
+
+Add the following dependency to your project's `pom.xml`:
 
 ```xml
 <dependency>
@@ -62,7 +72,7 @@ mvn exec:java -Dexec.mainClass=com.javiergs.examples.taiga.TaigaWriteExample -De
 
 No external API calls occur during `mvn verify`.
 
-## Modules
+## Library modules
 
 - **GitHub:** URL parsing, remote file retrieval, and repository traversal. [Guide](docs/github-client.md).
 - **Taiga:** Projects, sprints, user stories, tasks, and status operations. [Guide](docs/taiga-client.md).
@@ -70,18 +80,20 @@ No external API calls occur during `mvn verify`.
 - **Compiler:** Lexer, token, and automata helpers; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/compiler/package-summary.html).
 - **Groq:** API client utilities; see the [API reference](https://javiergs.github.io/tulip-api/javadoc/javiergs/tulip/groq/package-summary.html).
 
-## Configuration and credentials
+## Credentials and service safety
 
 - Use a local `tulip.properties` file for example-specific credentials, following `src/main/resources/tulip.properties.example`.
 - **Do not commit actual credentials.** The `.gitignore` excludes local `tulip.properties` files.
 - GitHub examples can use an optional `GITHUB_TOKEN` environment variable (preferred) or properties key; Taiga examples require `taiga.host`, `taiga.username`, and `taiga.password`.
 
-## Documentation
+## API documentation
 
-- [GitHub client](docs/github-client.md)
-- [Taiga client](docs/taiga-client.md)
-- [JavaDoc](https://javiergs.github.io/tulip-api/javadoc/)
+- [TULIP JavaDoc](https://javiergs.github.io/tulip-api/javadoc/) — published API reference.
+- [GitHub client guide](docs/github-client.md) and [Taiga client guide](docs/taiga-client.md) — examples and configuration.
 
-## Contributing
+## Troubleshooting
 
-Improvements to examples, tutorials, and documentation are welcome via pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for the fork-and-PR process, testing expectations, credential handling, and maintainer review.
+- **Maven cannot resolve TULIP:** Use the published `com.javiergs:tulip:8.0.0` dependency; a later version may not yet be available on Maven Central.
+- **GitHub API errors:** Check connectivity and rate limits; use a scoped token only when needed.
+- **Taiga authentication fails:** Check `taiga.host`, username, password, and service availability; never share real credentials in issues.
+- **Build failure:** Confirm `mvn -version` reports Java 21.
