@@ -4,3 +4,16 @@
 **/target/
 **/tulip.properties
 /src/main/resources/application.properties
+
+# Additional IDE and local files
+.classpath
+.project
+.settings/
+.vscode/
+Thumbs.db
+*.log
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
