@@ -3,6 +3,7 @@
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Examples 8.0.0](https://img.shields.io/badge/version-8.0.0-green)
+[![Java CI](https://github.com/javiergs/tulip-getting-started/actions/workflows/java-ci.yml/badge.svg)](https://github.com/javiergs/tulip-getting-started/actions/workflows/java-ci.yml)
 
 **TULIP** is a Java utility library distributed through Maven Central. The published examples use **TULIP 8.0.0** from Maven Central. The library's **8.1.0** release is not yet available as `com.javiergs:tulip:8.1.0` on Maven Central (verified by CI); the examples will be upgraded after publication and compatibility testing. This repository helps developers **use the published library** through a single Maven project containing independent runnable examples, guides, and API documentation. The library implementation is not maintained here.
 
